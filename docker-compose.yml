@@ -16,4 +16,4 @@ services:
 
   mongodb:
     image: mongo
-  restart: always
+    restart: always
