@@ -2,3 +2,13 @@ version: '2'
 services:
   front:
     image: amiotisse/ubsunu-front:RC1
+    ports:
+      - 80:80
+
+  alphau:
+    image: himnabil/alphau-server:RC1
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
