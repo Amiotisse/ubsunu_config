@@ -4,11 +4,16 @@ services:
     image: amiotisse/ubsunu-front:RC1
     ports:
       - 80:80
+    depends_on:
+      - mongodb
+    restart: always
 
   alphau:
     image: himnabil/alphau-server:RC1
     depends_on:
       - mongodb
+    restart: always
 
   mongodb:
     image: mongo
+  restart: always
