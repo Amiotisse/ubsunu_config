@@ -14,6 +14,13 @@ services:
       - mongodb
     restart: always
 
+  ubsunu-profile:
+    image: amiotisse/ubsunu-profile:RC1
+    depends_on:
+      - alphau
+      - mongodb
+    restart: always
+    
   mongodb:
     image: mongo
     restart: always
