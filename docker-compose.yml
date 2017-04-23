@@ -20,7 +20,9 @@ services:
       - alphau
       - mongodb
     restart: always
-    
+
   mongodb:
     image: mongo
     restart: always
+    volumes:
+      - /data:/data/db
