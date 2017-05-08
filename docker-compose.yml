@@ -18,7 +18,7 @@ services:
       - mongodb
     restart: always
 
-  profile:
+  ubsunu-profile:
     image: amiotisse/ubsunu-profile:RC1
     depends_on:
       - alphau
