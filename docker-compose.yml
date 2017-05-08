@@ -8,16 +8,28 @@ services:
       - alphau
     restart: always
 
+  mailer:
+    image: amiotisse/ubsunu-mailer:RC1
+    restart: always
+
   alphau:
     image: himnabil/alphau-server:RC1
     depends_on:
       - mongodb
     restart: always
 
-  ubsunu-profile:
+  profile:
     image: amiotisse/ubsunu-profile:RC1
     depends_on:
       - alphau
+      - mongodb
+    restart: always
+
+  marks:
+    image: amiotisse/ubsunu-marks:RC1
+    depends_on:
+      - alphau
+      - mailer
       - mongodb
     restart: always
 
